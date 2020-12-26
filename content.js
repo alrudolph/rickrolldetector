@@ -45,13 +45,12 @@ $(() => {
     
     // adds/removes images
     const runSearch = on => {
+        $(".__rickrolldetected").each(function() {
+            $(this).remove();
+        })
+
         if (on) {
             addImage();
-        }
-        else {
-            $(".__rickrolldetected").each(function() {
-                $(this).remove();
-            })
         }
     }
 

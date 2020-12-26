@@ -1,8 +1,6 @@
 $(() => {
 
     const applyChange = checked => {
-        console.log("CHANGING", { state: checked });
-
         // save settings:
         chrome.storage.sync.set({ state: checked });
 
@@ -17,7 +15,7 @@ $(() => {
     });
 
     chrome.storage.sync.get('state', ({ state }) => {
-        let next = state !== undefined ? state : true;
+        const next = state !== undefined ? state : true;
 
         $('input#on')[0].checked = next;
         applyChange(next);
